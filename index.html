@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>index</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    <style>
+
+    html, body {
+      margin: 5;
+      padding: 5;
+    }
+    canvas {
+      display: block;
+    }
+
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/addons/p5.sound.min.js"></script>
+
+    <script>
+
+    function setup(){
+      noCanvas();
+      noLoop();
+
+      title("Games");
+        link("Snake", "Games/snake", 0);
+        link("Flappy bird", "Games/flappybird", 0);
+        link("2048", "Games/2048", 0);
+
+      breakline();
+
+      title("Cellular automata");
+        link("Game of life", "CellularAutomata/gameoflife", 0);
+        link("Wolfram cellular automata", "CellularAutomata/wolframCA", 0);
+        link("Langton's ant", "CellularAutomata/langtonsant", 0);
+
+      breakline();
+
+      title("Pi");
+        link("Pi with Leibniz series", "Pi/PiLeibnizSeries", 0);
+        link("Pi with collisions", "Pi/PiCollisions", 0);
+
+      breakline();
+
+      title("Fourier");
+        link("Fourier series", "fourier/fourierseries", 0);
+        subtitle("Fourier transform", 0);
+          link("Drawing with DFT and epicycles", "fourier/fouriertransform/drawingwithepicycles", 1);
+          link("Complex numbers version", "fourier/fouriertransform/drawingwithcomplexnumbers", 1);
+
+      breakline();
+
+      title("Fractals");
+        link("The chaos game", "Fractals/chaosgame", 0);
+        link("Mandelbrot set", "Fractals/mandelbrotset", 0);
+        link("L-system", "Fractals/LSystem", 0);
+        subtitle("Trees", 0);
+          link("Fractal tree recursive", "Fractals/Trees/FractalTreeRecursive", 1);
+          link("Fractal tree object oriented", "Fractals/Trees/FractalTreeObjectOriented", 1);
+          link("Fractal tree L-system", "Fractals/Trees/FractalTreeLSystem", 1);
+          link("Fractal tree space colonization", "Fractals/Trees/FractalTreeSpaceColonization", 1);
+          link("Fractal tree 3D space colonization", "Fractals/Trees/FractalTree3DSpaceColonization", 1);
+
+      breakline();
+
+      title("Algorithmic botany");
+        link("Phyllotaxis", "AlgorithmicBotany/Phyllotaxis", 0);
+
+      breakline();
+
+      title("Mazes");
+        link("Maze generator", "Maze/mazegenerator", 0);
+        link("A* search pathfinding", "Maze/astarpathfinding", 0);
+
+      breakline();
+
+      title("Supershapes");
+        link("Superellipse", "Supershapes/superellipse", 0);
+        link("2D supershape", "Supershapes/2Dsupershapes", 0);
+
+      breakline();
+
+      title("Sound");
+        link("Recaman's sequence", "sound/recamansequence", 0);
+
+      breakline();
+
+      title("Esoteric languages");
+        link("Malbolge", "esoteric/malbolge", 0);
+        link("Cow", "esoteric/cow", 0);
+          link("Str 2 cow", "esoteric/cow/str2cow", 1);
+          link("Cow 2 str", "esoteric/cow/cow2str", 1);
+        link("Brainfuck", "esoteric/brainfuck", 0);
+
+      breakline();
+
+      title("Repo");
+        link("C", "repo/c", 0);
+        link("Makefiles", "repo/makefile", 0);
+
+      breakline();
+
+      title("Bbz <3");
+        link("My heart", "Clo/heart", 0);
+
+      // title("");
+      //   link("", "", 0);
+      //   link("", "", 0);
+      //   link("", "", 0);
+    }
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    function link(name, link, depth) {
+      let str = "";
+      for(let i = 0; i < depth; i++){
+        str += "&nbsp;&nbsp;&nbsp;&nbsp;";
+      }
+      str += "|__";
+      str += "<a target='_blank' rel='noopener noreferrer' href='https://romainducrocq.000webhostapp.com/";
+      str += link;
+      str += "'>";
+      str += name;
+      str += "</a>";
+      let div = createDiv(str);
+      div.style('font-size', '16px');
+    }
+
+    function title(name) {
+      str = "<strong>" + name + "</strong>";
+      let div = createDiv(str);
+      div.style('font-size', '24px');
+    }
+
+    function subtitle(name, depth) {
+      let str = "";
+      for(let i = 0; i < depth; i++){
+        str += "&nbsp;&nbsp;&nbsp;&nbsp;";
+      }
+      str += "|__";
+      str += "<strong>" + name + "</strong>";
+      let div = createDiv(str);
+      div.style('font-size', '16px');
+    }
+
+    function breakline() {
+      createDiv("<br>");
+    }
+
+    </script>
+  </head>
+  <body>
+  </body>
+</html>

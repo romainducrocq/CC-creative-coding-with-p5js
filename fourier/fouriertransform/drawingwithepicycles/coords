@@ -1,0 +1,28 @@
+#!/bin/bash
+#https://shinao.github.io/PathToPoints/
+#https://twitter.com/3blue1brown/status/1143342271535837184
+
+if [ ! -f "$1" ]; then
+    echo "File not found!"
+    exit
+fi
+
+FILE="$1"
+FILE="${FILE##*/}".js
+
+if [ ! -f "${FILE}" ]; then
+    touch "${FILE}"
+fi
+
+truncate -s 0 "${FILE}"
+
+echo "let ""${FILE%.*}"" = [" | tee -a "${FILE}"
+
+cat "$1" | while IFS= read -r LINE
+do
+  echo "  { x: "`echo "${LINE}" | cut -d',' -f1`", y: "`echo "${LINE}" | cut -d',' -f2`" }," | tee -a "${FILE}"
+done
+
+echo "];" | tee -a "${FILE}"
+
+exit

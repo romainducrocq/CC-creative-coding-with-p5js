@@ -52,6 +52,18 @@
 
 		count++;
 	}else{
+		for(let j=0; j < 50; j++){
+			c1 = Math.floor(Math.random() * 255);
+			c2 = Math.floor(Math.random() * 255);
+			c3 = Math.floor(Math.random() * 255);
+
+			document.body.innerHTML = '<h1 id="10" style="font-size:512px;"></h1>';
+			document.body.style = "background-color:rgb(" + (255 - c1) + "," + (255 - c2) + "," + (255 - c3) + ");";
+			document.getElementById(count + "").innerHTML = "<span style=color:rgb(" + c1 + "," + c2 + "," + c3 + ");><3</span>";
+
+			await new Promise(r => setTimeout(r, 100));	
+		}
+
 		document.body.innerHTML = '<h1 id="10" style="font-size:64px;"></h1>';
 		document.body.style = "background-color:black;";
 

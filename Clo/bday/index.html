@@ -57,7 +57,7 @@
 
 		clear = false;
 		w = 14;
-		h = 25;
+		h = 24;
 		for(let i = 0;; i++){
 			if(i > 0 && i % (w * h) == 0){
 				clear = true;
@@ -91,14 +91,14 @@
 				document.body.style = "background-color:black;";
 				clear = false;
 
-				await new Promise(r => setTimeout(r, 100));
+				await new Promise(r => setTimeout(r, 50));
 
 				document.getElementById(count + "").innerHTML = "<span style=color:rgb(" + Math.floor(Math.random() * 255) + "," + Math.floor(Math.random() * 255) + "," + Math.floor(Math.random() * 255) + ");><3</span>";
 
 
 			}
 
-			await new Promise(r => setTimeout(r, 100));
+			await new Promise(r => setTimeout(r, 50));
 			
 		}
 

@@ -1,0 +1,60 @@
+<!DOCTYPE>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>
+		joyeu naniv
+	</title>
+</head>
+<body>
+
+<button id="myButton">THE MYSTERIOUS BDAY BUTTON!</button>
+
+<h1>
+	<span id="0"></span>
+	<span id="1"></span>
+	<span id="2"></span>
+</h1>
+
+<h1 id="3"></h1>
+<h1 id="4"></h1>
+<h1 id="5"></h1>
+<h1 id="6"></h1>
+
+<h1 style="color: red">
+	<span id="7"></span>
+	<span id="8"></span>
+</h1>
+
+<h1 id=9></h1>
+
+<script>
+
+	var myButton = document.getElementById("myButton");
+
+	var count = 0;
+
+	function testButton(){
+	    document.getElementById(count + "").innerHTML = document.getElementById(count + "").innerHTML + [
+			"3..",
+			"2..",
+			"1..",
+			"22 Juin 2022",
+			"Paris Bercy<br>AccorHotels Arena",
+			"Be ready for",
+			"...",
+			"Billie ",
+			"Eilish",
+			"<3"
+		][count];
+
+		count = Math.min(count + 1, 9);
+	}
+
+	myButton.addEventListener("click", testButton);
+
+</script>
+
+</body>
+</html>

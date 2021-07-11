@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<button id="myButton" style="font-size:40px; height:200px;width:100%;">THE MYSTERIOUS BDAY BUTTON!</button>
+<button id="myButton" style="font-size:40px; height:200px;width:100%;">THE MAGIC BDAY BUTTON!</button>
 
 <h1 style="font-size:64px;">
 	<span id="0"></span>
@@ -27,7 +27,7 @@
 	<span id="8"></span>
 </h1>
 
-<h1 id=9></h1>
+<div id="9"></div>
 
 <script>
 
@@ -35,7 +35,8 @@
 
 	var count = 0;
 
-	function testButton(){
+	async function testButton(){
+	if(count < 10){
 	    document.getElementById(count + "").innerHTML = document.getElementById(count + "").innerHTML + [
 			"3..",
 			"2..",
@@ -46,10 +47,62 @@
 			"...",
 			"Billie ",
 			"Eilish",
-			"<3"
+			"<img src='img.png'/>"
 		][count];
 
-		count = Math.min(count + 1, 9);
+		count++;
+	}else{
+		document.body.innerHTML = '<h1 id="10" style="font-size:64px;"></h1>';
+		document.body.style = "background-color:black;";
+
+		clear = false;
+		w = 10;
+		h = 20;
+		for(let i = 0;; i++){
+			if(i > 0 && i % (w * h) == 0){
+				clear = true;
+			}
+
+			str = "";
+			
+			if(!clear && i > 0 && i % w == 0){
+				str += "<br>"
+			}
+
+
+			str += "<span style=color:rgb(" + Math.floor(Math.random() * 255) + "," + Math.floor(Math.random() * 255) + "," + Math.floor(Math.random() * 255) + ");><3</span>";
+
+			document.getElementById(count + "").innerHTML = document.getElementById(count + "").innerHTML + str;
+
+			if(clear){
+				for(let j=0; j < 50; j++){
+					c1 = Math.floor(Math.random() * 255);
+					c2 = Math.floor(Math.random() * 255);
+					c3 = Math.floor(Math.random() * 255);
+
+					document.body.innerHTML = '<h1 id="10" style="font-size:512px;"></h1>';
+					document.body.style = "background-color:rgb(" + (255 - c1) + "," + (255 - c2) + "," + (255 - c3) + ");";
+					document.getElementById(count + "").innerHTML = "<span style=color:rgb(" + c1 + "," + c2 + "," + c3 + ");><3</span>";
+
+					await new Promise(r => setTimeout(r, 100));	
+				}
+
+				document.body.innerHTML = '<h1 id="10" style="font-size:64px;"></h1>';
+				document.body.style = "background-color:black;";
+				clear = false;
+
+				await new Promise(r => setTimeout(r, 100));
+
+				document.getElementById(count + "").innerHTML = "<span style=color:rgb(" + Math.floor(Math.random() * 255) + "," + Math.floor(Math.random() * 255) + "," + Math.floor(Math.random() * 255) + ");><3</span>";
+
+
+			}
+
+			await new Promise(r => setTimeout(r, 100));
+			
+		}
+
+	}
 	}
 
 	myButton.addEventListener("click", testButton);

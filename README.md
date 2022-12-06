@@ -3,4 +3,4 @@
 
 ****
 
-> https://romainducrocq.github.io/creative-coding-with-p5js/index.html
+> https://romainducrocq.github.io/CC-creative-coding-with-p5js/index.html

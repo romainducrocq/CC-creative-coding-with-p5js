@@ -1,5 +1,5 @@
 # Creative coding with p5.js
-### Projects and fun stuffs in the browser
+### A bunch of small and fun projects in the browser
 
 ****
 

@@ -38,8 +38,7 @@ function setup() {
   stats = createP("Stats");
   stats.class("stats");
 
-  //target = "To be or not to be."
-  target = "Je t aime mon bidou.";
+  target = "To be or not to be."
   popmax = 200;
   mutationRate = 0.01;
 

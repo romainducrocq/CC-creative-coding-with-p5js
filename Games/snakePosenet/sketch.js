@@ -46,7 +46,7 @@ function setup() {
 
   setColor("DEFAULT");
 
-  title = createDiv('The sneyeke game with PoseNet');
+  title = createDiv('The snake game with PoseNet');
   title.position(10, height + 10);
   title.style('font-size', '24px');
   title.style('font-family','Ubuntu, sans-serif');
